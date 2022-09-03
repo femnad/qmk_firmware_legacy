@@ -79,8 +79,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [SYMB] = LAYOUT_ergodox(
        // left hand
        _______,KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  _______,
-       _______,KC_EXLM,KC_AT,  KC_HASH,KC_DLR, KC_PERC,_______,
-       _______,KC_LCBR,KC_RCBR,KC_LPRN,KC_RPRN,KC_EQL,
+       KC_MPRV,KC_EXLM,KC_AT,  KC_HASH,KC_DLR, KC_PERC,_______,
+       KC_MNXT,KC_LCBR,KC_RCBR,KC_LPRN,KC_RPRN,KC_EQL,
        _______,_______,_______,KC_TILD,KC_PIPE,KC_GRV,_______,
        _______,_______,_______,_______,_______,
                                        _______,_______,
