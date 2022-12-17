@@ -145,12 +145,13 @@ def output_map(input_file):
     os.rename(output_file, input_file)
 
 def get_max_len(index):
-    if index in [0, 7, 14, 20, 26]:
+    # Longer key, mostly on the edge.
+    if index in [0, 7, 14, 20, 26, 57]:
         return 9
     return 6
 
 
-symbols = {
+SYMBOLS = {
         'QUOT': "'",
         'COMM': ',',
         'DOT': '.',
@@ -190,12 +191,12 @@ FN_MAP = {
 def abbrev(k, index):
     max_len = get_max_len(index)
 
-    if k in symbols:
-        return symbols[k][:max_len]
+    if k in SYMBOLS:
+        return SYMBOLS[k][:max_len]
 
     if k.startswith('KC_'):
         k = k[3:][:max_len]
-        return symbols.get(k, k)
+        return SYMBOLS.get(k, k)
 
     if set(k) == {'_'}:
         return ''
