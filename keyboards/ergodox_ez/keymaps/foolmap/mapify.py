@@ -3,15 +3,14 @@ import argparse
 import os
 import re
 
-
-FN_KEY_REGEX = re.compile(r'(OSL|TG|OSM|MEH)\((.*)\)')
+FN_KEY_REGEX = re.compile(r'(OSL|TG|OSM|MEH|HYPR|CAG)\((.*)\)')
 LAYOUT_START_MATCHER = re.compile(r'\[([A-Z]+)\] = LAYOUT_ergodox\(')
 MULTILINE_COMMENT_LINE = re.compile(r'^(/| )\*(/)?.*')
 
 LAYERS = {
-        'base': 'basic',
-        'symb': 'symbol',
-        'mdia': 'media',
+    'base': 'basic',
+    'symb': 'symbol',
+    'mdia': 'media',
 }
 
 
@@ -40,6 +39,7 @@ def process_layout(layout, layout_name, index) -> str:
  *                                 `--------------------'       `--------------------'
  */
 '''
+
 
 def build_layout_maps(input_file):
     layout_keys_matcher = re.compile(r'\[[A-Z]+\] = LAYOUT_ergodox\((.*)\),')
@@ -144,6 +144,7 @@ def output_map(input_file):
 
     os.rename(output_file, input_file)
 
+
 def get_max_len(index):
     # Longer key, mostly on the edge.
     if index in [0, 7, 14, 20, 26, 57]:
@@ -152,43 +153,48 @@ def get_max_len(index):
 
 
 SYMBOLS = {
-        'QUOT': "'",
-        'COMM': ',',
-        'DOT': '.',
-        'SCLN': ';',
-        'EXLM': '!',
-        'AT': '@',
-        'HASH': '#',
-        'DLR': '$',
-        'PERC': '%',
-        'CIRC': '^',
-        'AMPR': '&',
-        'ASTR': '*',
-        'LCBR': '{',
-        'RCBR': '}',
-        'LPRN': '(',
-        'RPRN': ')',
-        'EQL': '=',
-        'SLSH': '/',
-        'MINS': '-',
-        'UNDS': '_',
-        'LBRC': '[',
-        'RBRC': ']',
-        'TILD': '~',
-        'PIPE': '|',
-        'GRV': '`',
-        'BSLS': '\\',
-        'PLUS': '+',
-        'QK_BOOT': 'BOOT',
+    'QUOT': "'",
+    'COMM': ',',
+    'DOT': '.',
+    'SCLN': ';',
+    'EXLM': '!',
+    'AT': '@',
+    'HASH': '#',
+    'DLR': '$',
+    'PERC': '%',
+    'CIRC': '^',
+    'AMPR': '&',
+    'ASTR': '*',
+    'LCBR': '{',
+    'RCBR': '}',
+    'LPRN': '(',
+    'RPRN': ')',
+    'EQL': '=',
+    'SLSH': '/',
+    'MINS': '-',
+    'UNDS': '_',
+    'LBRC': '[',
+    'RBRC': ']',
+    'TILD': '~',
+    'PIPE': '|',
+    'GRV': '`',
+    'BSLS': '\\',
+    'PLUS': '+',
+    'QK_BOOT': 'BOOT',
 }
 
+COMBINATIONS = {
+    'MEH',
+    'HYPR',
+    'CAG',
+}
 
 FN_MAP = {
-        'OSL': '@',
-        'TG': '!',
-        'OSM': '^',
-        'MEH': 'MEH+'
-        }
+    'OSL': '@',
+    'TG': '!',
+    'OSM': '^',
+}
+
 
 def abbrev(k, index):
     max_len = get_max_len(index)
@@ -212,8 +218,10 @@ def abbrev(k, index):
         _, _, key_full = key.partition('_')
         key = key_full.split('_')[-1]
 
-    fn = FN_MAP.get(fn, fn)
+    if fn in COMBINATIONS:
+        return f'{fn}+{key}'
 
+    fn = FN_MAP.get(fn, fn)
     return f'{fn}{key}'
 
 
