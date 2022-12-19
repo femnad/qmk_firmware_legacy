@@ -179,6 +179,7 @@ SYMBOLS = {
         'GRV': '`',
         'BSLS': '\\',
         'PLUS': '+',
+        'QK_BOOT': 'BOOT',
 }
 
 
