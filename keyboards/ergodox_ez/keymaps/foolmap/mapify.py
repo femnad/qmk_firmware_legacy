@@ -4,7 +4,7 @@ import os
 import re
 
 
-FN_KEY_REGEX = re.compile(r'(OSL|TG|OSM)\((.*)\)')
+FN_KEY_REGEX = re.compile(r'(OSL|TG|OSM|MEH)\((.*)\)')
 LAYOUT_START_MATCHER = re.compile(r'\[([A-Z]+)\] = LAYOUT_ergodox\(')
 MULTILINE_COMMENT_LINE = re.compile(r'^(/| )\*(/)?.*')
 
@@ -187,6 +187,7 @@ FN_MAP = {
         'OSL': '@',
         'TG': '!',
         'OSM': '^',
+        'MEH': 'MEH+'
         }
 
 def abbrev(k, index):
@@ -207,10 +208,11 @@ def abbrev(k, index):
         return k[:max_len]
 
     fn, key = fn_key.groups()
-    if key.startswith('MOD_'):
-        key = key[4:]
+    if '_' in key:
+        _, _, key_full = key.partition('_')
+        key = key_full.split('_')[-1]
 
-    fn = FN_MAP.get(fn, 'UNK')
+    fn = FN_MAP.get(fn, fn)
 
     return f'{fn}{key}'
 
