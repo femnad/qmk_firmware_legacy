@@ -3,7 +3,7 @@
 
 #define BASE 0 // default layer
 #define SYMB 1 // symbols
-#define MDIA 2 // media keys
+#define MISC 2 // misc keys
 
 enum custom_keycodes {
   CLEAR = SAFE_RANGE
@@ -14,7 +14,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic Layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |@MDIA   |  1   |  2   |  3   |  4   |  5   | ESC  |           | BSPC |  6   |  7   |  8   |  9   |  0   |   @MDIA|
+ * |@MISC   |  1   |  2   |  3   |  4   |  5   | ESC  |           | BSPC |  6   |  7   |  8   |  9   |  0   |   @MISC|
  * |--------+------+------+------+------+------+------|           |------+------+------+------+------+------+--------|
  * |MUTE    |  '   |  ,   |  .   |  P   |  Y   | TAB  |           | ENT  |  F   |  G   |  C   |  R   |  L   |    VOLU|
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [BASE] = LAYOUT_ergodox(
         // left hand
-        OSL(MDIA),     KC_1,        KC_2,    KC_3,   KC_4,   KC_5,   KC_ESC,
+        OSL(MISC),     KC_1,        KC_2,    KC_3,   KC_4,   KC_5,   KC_ESC,
         KC_MUTE,       KC_QUOT,     KC_COMM, KC_DOT, KC_P,   KC_Y,   KC_TAB,
         KC_MPLY,       KC_A,        KC_O,    KC_E,   KC_U,   KC_I,
         CLEAR,         KC_SCLN,     KC_Q,    KC_J,   KC_K,   KC_X,   OSM(MOD_LSFT),
@@ -44,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                                _______,
                                                         KC_SPC, OSM(MOD_LCTL), OSM(MOD_LALT),
         // right hand
-        KC_BSPC,      KC_6,   KC_7,   KC_8,   KC_9,   KC_0,      OSL(MDIA),
+        KC_BSPC,      KC_6,   KC_7,   KC_8,   KC_9,   KC_0,      OSL(MISC),
         KC_ENT,       KC_F,   KC_G,   KC_C,   KC_R,   KC_L,      KC_VOLU,
                       KC_D,   KC_H,   KC_T,   KC_N,   KC_S,      KC_VOLD,
         OSM(MOD_RSFT),KC_B,   KC_M,   KC_W,   KC_V,   KC_Z,      CLEAR,
@@ -97,16 +97,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        _______, _______, _______
 ),
 
-/* Keymap 2: Media Layer
+/* Keymap 2: Misc Layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
  * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
  * |--------+------+------+------+------+------+------|           |------+------+------+------+------+------+--------|
  * |        |      |      | MS_U |      | WH_U |      |           |      |      | ACL2 | ACL1 | ACL0 |      |        |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |QK_BOOT |      | MS_L | MS_D | MS_R | WH_D |------|           |------|      | BTN1 | BTN2 | BTN3 |      | QK_BOOT|
+ * |APP     |      | MS_L | MS_D | MS_R | WH_D |------|           |------|      | BTN1 | BTN2 | BTN3 |      |        |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |      |      |      |      |      |      |           |      |      | WH_L | WH_R |      |      |        |
+ * |        |      |      |      |      | BOOT |      |           |      | BOOT | WH_L | WH_R |      |      |        |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   |      |      |      |      |      |                                       |      |      |      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
@@ -119,11 +119,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 `--------------------'       `--------------------'
  */
 
-[MDIA] = LAYOUT_ergodox(
+[MISC] = LAYOUT_ergodox(
        _______, _______, _______, _______, _______, _______, _______,
        _______, _______, _______, KC_MS_U, _______, KC_WH_U, _______,
-       QK_BOOT, _______, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_D,
-       _______, _______, _______, _______, _______, _______, _______,
+       KC_APP,  _______, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_D,
+       _______, _______, _______, _______, _______, QK_BOOT, _______,
        _______, _______, _______, _______, _______,
                                            _______, _______,
                                                     _______,
@@ -131,8 +131,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // right hand
        _______,  _______, _______, _______, _______, _______, _______,
        _______,  _______, KC_ACL2, KC_ACL1, KC_ACL0, _______, _______,
-                 _______, KC_BTN1, KC_BTN2, KC_BTN3, _______, QK_BOOT,
-       _______,  _______, KC_WH_L, KC_WH_R, _______, _______, _______,
+                 _______, KC_BTN1, KC_BTN2, KC_BTN3, _______, _______,
+       _______,  QK_BOOT, KC_WH_L, KC_WH_R, _______, _______, _______,
                           _______, _______, _______, _______, _______,
        _______, _______,
        _______,
