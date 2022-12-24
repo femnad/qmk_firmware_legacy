@@ -206,6 +206,9 @@ def abbrev(k, index):
         k = k[3:][:max_len]
         return SYMBOLS.get(k, k)
 
+    if k.startswith('MOD_'):
+        return k[4:][:max_len]
+
     if set(k) == {'_'}:
         return ''
 
