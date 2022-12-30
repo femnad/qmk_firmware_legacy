@@ -6,7 +6,7 @@ layouts:
     - mute quot comm dot p y tab ent f g c r l volu
     - mply a o e u i osm(lsft) osm(rsft) d h t n s vold
     - clear scln q j k x b m w v z clear
-    - osm(lgui) home pgup pgdown end osl(symb) osl(symb) left down up right osm(rgui)
+    - osm(lgui) home pgup pgdn end osl(symb) osl(symb) left down up right osm(rgui)
     - spc osm(lctl) osm(lalt) osm(ralt) osm(rctl) spc
   symb:
     - _ f1 f2 f3 f4 f5 _ _ f6 f7 f8 f9 f10 _
@@ -17,8 +17,8 @@ layouts:
     - _ _ _ _ _ _
   mdia:
     - _ _ _ _ _ _ _ _ _ _ _ _ _ _
-    - wh_u _ wh_l ms_u wh_r _ _ _ _ acl2 acl1 acl0 _ rctl(tab)
-    - wh_d _ ms_l ms_d ms_r _ _ _ _ btn1 btn2 btn2 _ rctl(lsft(tab))
+    - wh_u _ wh_l ms_u wh_r _ _ _ _ acl2 acl1 acl0 _ _
+    - wh_d _ ms_l ms_d ms_r _ _ _ _ btn1 btn2 btn2 _ _
     - _ _ _ _ _ reset reset _ _ _ _ _
     - _ _ _ _ _ _ _ _ _ _ _ _
     - _ _ _ _ _ _
