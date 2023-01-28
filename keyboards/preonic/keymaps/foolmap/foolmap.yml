@@ -19,8 +19,8 @@ layouts:
     - clear _ tild pipe grv _ _ bsls plus del ins clear
     - _ _ _ _ _ _ _ _ _ _ _ _
   mdia:
-    - _ _ _ _ _ mute mply _ _ _ f11 f12
-    - _ _ pgup _ _ mprv mnxt _ _ up _ _
+    - _ _ _ _ _ mprv mnxt _ _ _ f11 f12
+    - _ _ pgup _ _ mute mply _ _ up _ _
     - _ home pgdn end ins _ _ del left down rght _
     - _ _ _ _ qk_boot _ _ qk_boot _ _ _ _
     - _ _ _ _ _ _ _ _ _ _ _ _
