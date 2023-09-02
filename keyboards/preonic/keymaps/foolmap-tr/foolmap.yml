@@ -35,8 +35,8 @@ layouts:
   mdia:
     - _ _ _ _ _ mprv mnxt _ _ _ f11  f12
     - _ _ pgup _ _ _ _ _ g_brv_l c_cdl_l _ _
-    - _ o_dia_l pgdn u_dia_l i_dls_l _ _ del left down rght s_cdl_l
-    - _ _ _ _ _ _ _ _ _ _ _ _
+    - _ o_dia_l pgdn u_dia_l i_dls_l _ _ del _ up _ s_cdl_l
+    - _ _ _ _ _ _ _ _ left down rght _
     - _ qk_boot _ _ _ _ _ _ _ _ qk_boot _
   fnlt:
     - 1 2 3 4 5 tild grv 6 7 8 9 0
