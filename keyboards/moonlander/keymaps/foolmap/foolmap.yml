@@ -6,11 +6,11 @@ custom_definitions:
 
 layouts:
   base:
-    - osl(mdia) 1 2 3 4 5 esc bspc 6 7 8 9 0 osl(mdia)
-    - mute quot comm dot p y tab ent f g c r l volu
-    - mply a o e u i osm(lsft) osm(rsft) d h t n s vold
+    - osl(mdia) 1 2 3 4 5 osm(lgui) osm(rgui) 6 7 8 9 0 osl(mdia)
+    - mute quot comm dot p y esc bspc f g c r l volu
+    - mply a o e u i tab ent d h t n s vold
     - clear scln q j k x b m w v z clear
-    - osm(lgui) home pgup pgdn end osl(symb) osl(symb) left down up right osm(rgui)
+    - home pgup pgdn end osl(symb) osm(lsft) osm(lsft) osl(symb) left down up right
     - spc osm(lctl) osm(lalt) osm(ralt) osm(rctl) spc
   symb:
     - _ f1 f2 f3 f4 f5 _ _ f6 f7 f8 f9 f10 _
