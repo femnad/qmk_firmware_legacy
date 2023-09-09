@@ -47,6 +47,7 @@ def build_layout_maps(input_file):
     keymaps = {}
     paren_stack = None
     in_layout = False
+    layout_name = None
 
     with open(input_file) as fd:
         layout = ''
@@ -57,14 +58,12 @@ def build_layout_maps(input_file):
             if len(l) == 0 or l.startswith('//') or MULTILINE_COMMENT_LINE.match(l) is not None:
                 continue
 
-            layout_start_match = LAYOUT_START_MATCHER.match(l)
-            if layout_start_match is not None:
-                layout_name = layout_start_match.group(1)
+            if m := LAYOUT_START_MATCHER.match(l):
+                layout_name = m.group(1)
                 in_layout = True
             if not in_layout:
                 continue
 
-            layout_name = None
             for c in l:
                 layout += c
                 if c == '(':
@@ -99,12 +98,12 @@ def output_map(input_file):
     in_layout = False
     is_comment = False
     layout_index = 0
+    layout = None
 
     output_file = f'{input_file}.tmp'
 
     with open(input_file) as ifd, open(output_file, 'w') as ofd:
         for l in ifd:
-            layout = None
 
             if comment_line.match(l):
                 is_comment = True
