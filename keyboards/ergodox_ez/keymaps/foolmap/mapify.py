@@ -4,9 +4,9 @@ import os
 import re
 
 
-FN_KEY_REGEX = re.compile('(OSL|TG|OSM)\((.*)\)')
-LAYOUT_START_MATCHER = re.compile('\[([A-Z]+)\] = LAYOUT_ergodox\(')
-MULTILINE_COMMENT_LINE = re.compile('^(/| )\*(/)?.*')
+FN_KEY_REGEX = re.compile(r'(OSL|TG|OSM)\((.*)\)')
+LAYOUT_START_MATCHER = re.compile(r'\[([A-Z]+)\] = LAYOUT_ergodox\(')
+MULTILINE_COMMENT_LINE = re.compile(r'^(/| )\*(/)?.*')
 
 LAYERS = {
         'base': 'basic',
@@ -15,7 +15,7 @@ LAYERS = {
 }
 
 
-def process_layout(layout, layout_name, index):
+def process_layout(layout, layout_name, index) -> str:
     layout_name = LAYERS.get(layout_name.lower(), layout_name)
     l = [abbrev(c, i) for i, c in enumerate(layout)]
     return f'''/* Keymap {index}: {layout_name.capitalize()} Layer
@@ -42,7 +42,7 @@ def process_layout(layout, layout_name, index):
 '''
 
 def build_layout_maps(input_file):
-    layout_keys_matcher = re.compile('\[[A-Z]+\] = LAYOUT_ergodox\((.*)\),')
+    layout_keys_matcher = re.compile(r'\[[A-Z]+\] = LAYOUT_ergodox\((.*)\),')
 
     keymaps = {}
     paren_stack = None
@@ -64,6 +64,7 @@ def build_layout_maps(input_file):
             if not in_layout:
                 continue
 
+            layout_name = None
             for c in l:
                 layout += c
                 if c == '(':
@@ -71,6 +72,8 @@ def build_layout_maps(input_file):
                         paren_stack = []
                     paren_stack.append('(')
                 elif c == ')':
+                    if paren_stack is None:
+                        raise Exception('Unbalanced parenthesis')
                     paren_stack.pop()
                 elif paren_stack is not None and len(paren_stack) == 0:
                     in_layout = False
@@ -80,8 +83,9 @@ def build_layout_maps(input_file):
 
     layout_maps = {}
     for name, keymap in keymaps.items():
-        layout_keys = layout_keys_matcher.match(keymap).group(1)
-        layout_maps[name] = ''.join(layout_keys.split(' ')).split(',')
+        if m := layout_keys_matcher.match(keymap):
+            layout_keys = m.group(1)
+            layout_maps[name] = ''.join(layout_keys.split(' ')).split(',')
 
     return layout_maps
 
@@ -89,7 +93,7 @@ def build_layout_maps(input_file):
 def output_map(input_file):
     layout_maps = build_layout_maps(input_file)
 
-    comment_line = re.compile('^(/| )\*(/)?.*')
+    comment_line = re.compile(r'^(/| )\*(/)?.*')
 
     paren_stack = None
     in_layout = False
@@ -100,6 +104,8 @@ def output_map(input_file):
 
     with open(input_file) as ifd, open(output_file, 'w') as ofd:
         for l in ifd:
+            layout = None
+
             if comment_line.match(l):
                 is_comment = True
                 continue
@@ -120,12 +126,16 @@ def output_map(input_file):
 
             if in_layout:
                 for c in l:
+                    if not layout:
+                        raise Exception('Layout is unknown')
                     layout += c
                     if c == '(':
                         if paren_stack is None:
                             paren_stack = []
                         paren_stack.append('(')
                     elif c == ')':
+                        if paren_stack is None:
+                            raise Exception('Unbalanced parenthesis')
                         paren_stack.pop()
                     elif paren_stack is not None and len(paren_stack) == 0:
                         in_layout = False
