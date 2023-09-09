@@ -15,25 +15,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Layer: BASE
  * +------+------+------+------+------+------+------+------+------+------+------+------+
- * |  1   |  2   |  3   |  4   |  5   | ESC  | BSPC |  6   |  7   |  8   |  9   |  0   |
+ * |  1   |  2   |  3   |  4   |  5   |  ~   |  `   |  6   |  7   |  8   |  9   |  0   |
  * +------+------+------+------+------+------+------+------+------+------+------+------+
- * |  '   |  ,   |  .   |  P   |  Y   | TAB  | ENT  |  F   |  G   |  C   |  R   |  L   |
+ * |  '   |  ,   |  .   |  P   |  Y   | ESC  | BSPC |  F   |  G   |  C   |  R   |  L   |
  * +------+------+------+------+------+------+------+------+------+------+------+------+
- * |  A   |  O   |  E   |  U   |  I   |^LSFT |^RSFT |  D   |  H   |  T   |  N   |  S   |
+ * |  A   |  O   |  E   |  U   |  I   | TAB  | ENT  |  D   |  H   |  T   |  N   |  S   |
  * +------+------+------+------+------+------+------+------+------+------+------+------+
- * |  ;   |  Q   |  J   |  K   |  X   |@SYMB |@SYMB |  B   |  M   |  W   |  V   |  Z   |
+ * |  ;   |  Q   |  J   |  K   |  X   |^LSFT |^RSFT |  B   |  M   |  W   |  V   |  Z   |
  * +------+------+------+------+------+------+------+------+------+------+------+------+
- * |^LGUI |@MDIA |CLEAR |^LALT |^LCTL | SPC  | SPC  |^RCTL |^RALT |CLEAR |@MDIA |^LGUI |
+ * |^LGUI |@MDIA |^LALT |^LCTL |@SYMB | SPC  | SPC  |@SYMB |^RCTL |^RALT |@MDIA |^LGUI |
  * +------+------+------+------+------+------+------+------+------+------+------+------+
  *
  */
 
 [BASE] = LAYOUT_preonic_grid(
-        KC_1,          KC_2,      KC_3,   KC_4,          KC_5,          KC_ESC,        KC_BSPC,       KC_6,          KC_7,          KC_8,  KC_9,      KC_0,
-        KC_QUOT,       KC_COMM,   KC_DOT, KC_P,          KC_Y,          KC_TAB,        KC_ENT,        KC_F,          KC_G,          KC_C,  KC_R,      KC_L,
-        KC_A,          KC_O,      KC_E,   KC_U,          KC_I,          OSM(MOD_LSFT), OSM(MOD_RSFT), KC_D,          KC_H,          KC_T,  KC_N,      KC_S,
-        KC_SCLN,       KC_Q,      KC_J,   KC_K,          KC_X,          OSL(SYMB),     OSL(SYMB),     KC_B,          KC_M,          KC_W,  KC_V,      KC_Z,
-        OSM(MOD_LGUI), OSL(MDIA), CLEAR,  OSM(MOD_LALT), OSM(MOD_LCTL), KC_SPC,        KC_SPC,        OSM(MOD_RCTL), OSM(MOD_RALT), CLEAR, OSL(MDIA), OSM(MOD_LGUI)
+        KC_1,          KC_2,      KC_3,          KC_4,          KC_5,      KC_TILD,       KC_GRV,        KC_6,      KC_7,          KC_8,          KC_9,      KC_0,
+        KC_QUOT,       KC_COMM,   KC_DOT,        KC_P,          KC_Y,      KC_ESC,        KC_BSPC,       KC_F,      KC_G,          KC_C,          KC_R,      KC_L,
+        KC_A,          KC_O,      KC_E,          KC_U,          KC_I,      KC_TAB,        KC_ENT,        KC_D,      KC_H,          KC_T,          KC_N,      KC_S,
+        KC_SCLN,       KC_Q,      KC_J,          KC_K,          KC_X,      OSM(MOD_LSFT), OSM(MOD_RSFT), KC_B,      KC_M,          KC_W,          KC_V,      KC_Z,
+        OSM(MOD_LGUI), OSL(MDIA), OSM(MOD_LALT), OSM(MOD_LCTL), OSL(SYMB), KC_SPC,        KC_SPC,        OSL(SYMB), OSM(MOD_RCTL), OSM(MOD_RALT), OSL(MDIA), OSM(MOD_LGUI)
 ),
 
 /* Layer: SYMB
@@ -44,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * +------+------+------+------+------+------+------+------+------+------+------+------+
  * |  {   |  }   |  (   |  )   |  =   |      |      |  /   |  -   |      |  [   |  ]   |
  * +------+------+------+------+------+------+------+------+------+------+------+------+
- * |      |      |  ~   |  |   |  `   |      |      |  \   |  +   | DEL  | INS  |      |
+ * |CLEAR |      |  ~   |  |   |  `   |      |      |  \   |  +   | DEL  | INS  |CLEAR |
  * +------+------+------+------+------+------+------+------+------+------+------+------+
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * +------+------+------+------+------+------+------+------+------+------+------+------+
@@ -55,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   _______, _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
         KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, _______, _______, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,
         KC_LCBR, KC_RCBR, KC_LPRN, KC_RPRN, KC_EQL,  _______, _______, KC_SLSH, KC_MINS, KC_UNDS, KC_LBRC, KC_RBRC,
-        _______, _______, KC_TILD, KC_PIPE, KC_GRV,  _______, _______, KC_BSLS, KC_PLUS, KC_DEL,  KC_INS,  _______,
+        CLEAR,   _______, KC_TILD, KC_PIPE, KC_GRV,  _______, _______, KC_BSLS, KC_PLUS, KC_DEL,  KC_INS,  CLEAR,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 ),
 
