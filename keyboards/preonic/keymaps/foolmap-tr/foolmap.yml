@@ -1,0 +1,46 @@
+custom_keys:
+  - clear
+custom_definitions:
+  C_CDL_L: UC(0x00e7) # ç
+  G_BRV_L: UC(0x011f) # ğ
+  I_DLS_L: UC(0x0131) # ı
+  O_DIA_L: UC(0x00f6) # ö
+  S_CDL_L: UC(0x015F) # ş
+  U_DIA_L: UC(0x00fc) # ü
+  C_CDL_U: UC(0x00c7) # Ç
+  G_BRV_U: UC(0x011e) # Ğ
+  I_DAB_U: UC(0x0130) # İ
+  O_DIA_U: UC(0x00d6) # Ö
+  S_CDL_U: UC(0x015E) # Ş
+  U_DIA_U: UC(0x00dc) # Ü
+enums:
+  preonic_layers:
+    - base
+    - symb
+    - mdia
+    - fnlt
+layouts:
+  base:
+    - 1 2 3 4 5 tild grv 6 7 8 9 0
+    - quot comm dot p y esc bspc f g c r l
+    - a o e u i tab ent d h t n s
+    - scln q j k x osm(lsft) osm(rsft) b m w v z
+    - osl(mdia) osl(fnlt) osm(lalt) osm(lctl) osl(symb) spc spc osl(symb) osm(rctl) osm(ralt) osl(fnlt) osl(mdia)
+  symb:
+    -  f1 f2 f3 f4 f5 _ _ f6 f7 f8 f9 f10
+    - exlm at hash dlr perc _ _ circ ampr astr lprn rprn
+    - lcbr rcbr lprn rprn eql _ _ slsh mins unds lbrc rbrc
+    - clear _ tild pipe grv _ _ bsls plus del ins clear
+    - _ _ _ _ _ _ _ _ _ _ _ _
+  mdia:
+    - _ _ _ _ _ mprv mnxt _ _ _ f11  f12
+    - _ _ pgup _ _ _ _ _ g_brv_l c_cdl_l _ _
+    - _ o_dia_l pgdn u_dia_l i_dls_l _ _ del _ up _ s_cdl_l
+    - _ _ _ _ _ _ _ _ left down rght _
+    - _ qk_boot _ _ _ _ _ _ _ _ qk_boot _
+  fnlt:
+    - 1 2 3 4 5 tild grv 6 7 8 9 0
+    - quot comm dot p y esc bspc f g_brv_u c_cdl_u r l
+    - a o_dia_u e u_dia_u i_dab_u tab ent d h t n s_cdl_u
+    - scln q j k x osm(lsft) osm(rsft) b m w v z
+    - osm(lgui) _ _ _ _ _ _ _ _ _ _ osm(rgui)
