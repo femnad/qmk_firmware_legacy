@@ -1,9 +1,6 @@
 custom_keys:
   - clear
 
-custom_definitions:
-  CAG(kc): (QK_LCTL | QK_LALT | QK_LGUI | (kc))
-
 layouts:
   base:
     - osl(misc) 1 2 3 4 5 esc bspc 6 7 8 9 0 osl(misc)
@@ -26,7 +23,7 @@ layouts:
   misc:
     - _ _ _ _ _ _ _ _  _ _ _ _ _ _
     - _ _ _ ms_u _ wh_u _ _  _ acl2 acl1 acl0 _ _
-    - cag(l) _ ms_l ms_d ms_r wh_d _ btn1 btn2 btn3 _ _
+    - _ _ ms_l ms_d ms_r wh_d _ btn1 btn2 btn3 _ _
     - _ _ _ _ _ qk_boot _ _ qk_boot wh_l wh_r _ _ _
     - _ _ _ _ _ _ _ _ _ _
     - _ _ _ _
