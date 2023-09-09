@@ -8,22 +8,22 @@
 #define CAG(kc) (QK_LCTL | QK_LALT | QK_LGUI | (kc))
 
 enum custom_keycodes {
-  CLEAR = ML_SAFE_RANGE,
+  CLEAR = SAFE_RANGE,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Layer: BASE
  * +------+------+------+------+------+------+------+------+------+------+------+------+------+------+
- * |@MDIA |  1   |  2   |  3   |  4   |  5   | ESC  | BSPC |  6   |  7   |  8   |  9   |  0   |@MDIA |
+ * |@MDIA |  1   |  2   |  3   |  4   |  5   |^LGUI |^RGUI |  6   |  7   |  8   |  9   |  0   |@MDIA |
  * +------+------+------+------+------+------+------+------+------+------+------+------+------+------+
- * | MUTE |  '   |  ,   |  .   |  P   |  Y   | TAB  | ENT  |  F   |  G   |  C   |  R   |  L   | VOLU |
+ * | MUTE |  '   |  ,   |  .   |  P   |  Y   | ESC  | BSPC |  F   |  G   |  C   |  R   |  L   | VOLU |
  * +------+------+------+------+------+------+------+------+------+------+------+------+------+------+
- * | MPLY |  A   |  O   |  E   |  U   |  I   |^LSFT |^RSFT |  D   |  H   |  T   |  N   |  S   | VOLD |
+ * | MPLY |  A   |  O   |  E   |  U   |  I   | TAB  | ENT  |  D   |  H   |  T   |  N   |  S   | VOLD |
  * +------+------+------+------+------+------+------+------+------+------+------+------+------+------+
  * |CLEAR |  ;   |  Q   |  J   |  K   |  X   |             |  B   |  M   |  W   |  V   |  Z   |CLEAR |
  * +------+------+------+------+------+------+             +------+------+------+------+------+------+
- * |^LGUI | HOME | PGUP | PGDN | END  |@SYMB |             |@SYMB | LEFT | DOWN |  UP  |RIGHT |^RGUI |
+ * | HOME | PGUP | PGDN | END  |@SYMB |^LSFT |             |^LSFT |@SYMB | LEFT | DOWN |  UP  |RIGHT |
  * +------+------+------+------+------+------+             +------+------+------+------+------+------+
  *                      | SPC  |^LCTL |^LALT |             |^RALT |^RCTL | SPC  |
  *                      +------+------+------+             +------+------+------+
@@ -31,12 +31,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [BASE] = LAYOUT_moonlander(
-        OSL(MDIA),     KC_1,          KC_2,          KC_3,          KC_4,          KC_5,      KC_ESC,        KC_BSPC,       KC_6,    KC_7,  KC_8,     KC_9,          KC_0, OSL(MDIA),
-        KC_MUTE,       KC_QUOT,       KC_COMM,       KC_DOT,        KC_P,          KC_Y,      KC_TAB,        KC_ENT,        KC_F,    KC_G,  KC_C,     KC_R,          KC_L, KC_VOLU,
-        KC_MPLY,       KC_A,          KC_O,          KC_E,          KC_U,          KC_I,      OSM(MOD_LSFT), OSM(MOD_RSFT), KC_D,    KC_H,  KC_T,     KC_N,          KC_S, KC_VOLD,
-        CLEAR,         KC_SCLN,       KC_Q,          KC_J,          KC_K,          KC_X,      KC_B,          KC_M,          KC_W,    KC_V,  KC_Z,     CLEAR,
-        OSM(MOD_LGUI), KC_HOME,       KC_PGUP,       KC_PGDN,       KC_END,        OSL(SYMB), OSL(SYMB),     KC_LEFT,       KC_DOWN, KC_UP, KC_RIGHT, OSM(MOD_RGUI),
-        KC_SPC,        OSM(MOD_LCTL), OSM(MOD_LALT), OSM(MOD_RALT), OSM(MOD_RCTL), KC_SPC
+        OSL(MDIA), KC_1,          KC_2,          KC_3,          KC_4,          KC_5,          OSM(MOD_LGUI), OSM(MOD_RGUI), KC_6,    KC_7,    KC_8,  KC_9,     KC_0, OSL(MDIA),
+        KC_MUTE,   KC_QUOT,       KC_COMM,       KC_DOT,        KC_P,          KC_Y,          KC_ESC,        KC_BSPC,       KC_F,    KC_G,    KC_C,  KC_R,     KC_L, KC_VOLU,
+        KC_MPLY,   KC_A,          KC_O,          KC_E,          KC_U,          KC_I,          KC_TAB,        KC_ENT,        KC_D,    KC_H,    KC_T,  KC_N,     KC_S, KC_VOLD,
+        CLEAR,     KC_SCLN,       KC_Q,          KC_J,          KC_K,          KC_X,          KC_B,          KC_M,          KC_W,    KC_V,    KC_Z,  CLEAR,
+        KC_HOME,   KC_PGUP,       KC_PGDN,       KC_END,        OSL(SYMB),     OSM(MOD_LSFT), OSM(MOD_LSFT), OSL(SYMB),     KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
+        KC_SPC,    OSM(MOD_LCTL), OSM(MOD_LALT), OSM(MOD_RALT), OSM(MOD_RCTL), KC_SPC
 ),
 
 /* Layer: SYMB
@@ -170,4 +170,14 @@ void oneshot_locked_mods_changed_user(uint8_t mods) {
   if (!mods) {
     clear_colors();
   }
+}
+
+void keyboard_post_init_user(void) {
+    // Maybe without noeeprom once?
+    rgb_matrix_enable_noeeprom();
+    rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
+    // Probably needed.
+    // rgb_matrix_sethsv_noeeprom(HSV_OFF);
+    // Probably not needed?
+    // rgb_matrix_set_color_all(0, 0, 0);
 }
