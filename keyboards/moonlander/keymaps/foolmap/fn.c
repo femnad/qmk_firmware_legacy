@@ -77,3 +77,13 @@ void oneshot_locked_mods_changed_user(uint8_t mods) {
     clear_colors();
   }
 }
+
+void keyboard_post_init_user(void) {
+    // Maybe without noeeprom once?
+    rgb_matrix_enable_noeeprom();
+    rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
+    // Probably needed.
+    // rgb_matrix_sethsv_noeeprom(HSV_OFF);
+    // Probably not needed?
+    // rgb_matrix_set_color_all(0, 0, 0);
+}
