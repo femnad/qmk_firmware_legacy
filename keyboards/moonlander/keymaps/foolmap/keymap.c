@@ -179,5 +179,5 @@ void keyboard_post_init_user(void) {
     // Probably needed.
     rgb_matrix_sethsv_noeeprom(HSV_OFF);
     // Probably not needed?
-    rgb_matrix_set_color_all(0, 0, 0);
+    // rgb_matrix_set_color_all(0, 0, 0);
 }
