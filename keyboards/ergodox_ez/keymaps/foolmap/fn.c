@@ -1,4 +1,5 @@
 void clear(void) {
+  swap_hands_off();
   clear_oneshot_mods();
   clear_oneshot_locked_mods();
   clear_keyboard();
