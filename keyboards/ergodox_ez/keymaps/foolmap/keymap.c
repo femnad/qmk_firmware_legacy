@@ -106,111 +106,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-void clear(void) {
-  clear_oneshot_mods();
-  clear_oneshot_locked_mods();
-  clear_keyboard();
-  reset_oneshot_layer();
-  layer_clear();
-  layer_on(BASE);
-  rgb_matrix_sethsv_noeeprom(HSV_OFF);
-}
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  if (record->event.pressed) {
-    switch (keycode) {
-      case CLEAR:
-        clear();
-        return false;
-    }
-  }
-  return true;
-}
-
-// Runs whenever there is a layer state change.
-layer_state_t layer_state_set_user(layer_state_t state) {
-  ergodox_board_led_off();
-  ergodox_right_led_1_off();
-  ergodox_right_led_2_off();
-  ergodox_right_led_3_off();
-
-  uint8_t layer = get_highest_layer(state);
-  switch (layer) {
-      case 0:
-        break;
-      case 1:
-        ergodox_right_led_1_on();
-        break;
-      case 2:
-        ergodox_right_led_2_on();
-        break;
-      case 3:
-        ergodox_right_led_3_on();
-        break;
-      case 4:
-        ergodox_right_led_1_on();
-        ergodox_right_led_2_on();
-        break;
-      case 5:
-        ergodox_right_led_1_on();
-        ergodox_right_led_3_on();
-        break;
-      case 6:
-        ergodox_right_led_2_on();
-        ergodox_right_led_3_on();
-        break;
-      case 7:
-        ergodox_right_led_1_on();
-        ergodox_right_led_2_on();
-        ergodox_right_led_3_on();
-        break;
-      default:
-        break;
-    }
-
-  return state;
+const keypos_t PROGMEM hand_swap_config[MATRIX_ROWS][MATRIX_COLS] = {
+    {{13, 0}, {12, 0}, {11, 0}, {10, 0}, {9, 0}, {8, 0}, {7, 0}, {6, 0}, {5, 0}, {4, 0}, {3, 0}, {2, 0}, {1, 0}, {0, 0}},
+    {{13, 1}, {12, 1}, {11, 1}, {10, 1}, {9, 1}, {8, 1}, {7, 1}, {6, 1}, {5, 1}, {4, 1}, {3, 1}, {2, 1}, {1, 1}, {0, 1}},
+    {{11, 2}, {10, 2}, {9, 2}, {8, 2}, {7, 2}, {6, 2}, {5, 2}, {4, 2}, {3, 2}, {2, 2}, {1, 2}, {0, 2}},
+    {{13, 3}, {12, 3}, {11, 3}, {10, 3}, {9, 3}, {8, 3}, {7, 3}, {6, 3}, {5, 3}, {4, 3}, {3, 3}, {2, 3}, {1, 3}, {0, 3}},
+    {{9, 4}, {8, 4}, {7, 4}, {6, 4}, {5, 4}, {4, 4}, {3, 4}, {2, 4}, {1, 4}, {0, 4}},
+    {{3, 5}, {2, 5}, {1, 5}, {0, 5}},
+    {{1, 6}, {0, 6}},
+    {{5, 7}, {4, 7}, {3, 7}, {2, 7}, {1, 7}, {0, 7}},
 };
-
-void oneshot_mods_changed_user(uint8_t mods) {
-  if (mods & MOD_MASK_SHIFT) {
-    rgb_matrix_sethsv_noeeprom(HSV_GREEN);
-  }
-  if (mods & MOD_MASK_CTRL) {
-    rgb_matrix_sethsv_noeeprom(HSV_BLUE);
-  }
-  if (mods & MOD_MASK_ALT) {
-    rgb_matrix_sethsv_noeeprom(HSV_PURPLE);
-  }
-  if (mods & MOD_MASK_GUI) {
-    rgb_matrix_sethsv_noeeprom(HSV_CORAL);
-  }
-  if (!mods) {
-    rgb_matrix_sethsv_noeeprom(HSV_OFF);
-  }
-}
-
-void oneshot_locked_mods_changed_user(uint8_t mods) {
-  if (mods & MOD_MASK_SHIFT) {
-    rgb_matrix_sethsv_noeeprom(HSV_SPRINGGREEN);
-  }
-  if (mods & MOD_MASK_CTRL) {
-    rgb_matrix_sethsv_noeeprom(HSV_CYAN);
-  }
-  if (mods & MOD_MASK_ALT) {
-    rgb_matrix_sethsv_noeeprom(HSV_MAGENTA);
-  }
-  if (mods & MOD_MASK_GUI) {
-    rgb_matrix_sethsv_noeeprom(HSV_PINK);
-  }
-  if (!mods) {
-    rgb_matrix_sethsv_noeeprom(HSV_OFF);
-  }
-}
-
-void keyboard_post_init_user(void) {
-    rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
-    rgb_matrix_sethsv_noeeprom(HSV_OFF);
-}
 void clear(void) {
   clear_oneshot_mods();
   clear_oneshot_locked_mods();
