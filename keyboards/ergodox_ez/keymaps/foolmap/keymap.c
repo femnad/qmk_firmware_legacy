@@ -118,6 +118,12 @@ void clear(void) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  bool any_oneshot = get_oneshot_mods() > 0 || get_oneshot_locked_mods() > 0;
+  if (is_swap_hands_on()) {
+    rgb_matrix_sethsv_noeeprom(HSV_WHITE);
+  } else if (!any_oneshot) {
+    rgb_matrix_sethsv_noeeprom(HSV_OFF);
+  }
   if (record->event.pressed) {
     switch (keycode) {
       case CLEAR:
