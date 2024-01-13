@@ -5,8 +5,6 @@
 #define SYMB 1
 #define MDIA 2
 
-#define CAG(kc) (QK_LCTL | QK_LALT | QK_LGUI | (kc))
-
 enum custom_keycodes {
   CLEAR = SAFE_RANGE,
 };
