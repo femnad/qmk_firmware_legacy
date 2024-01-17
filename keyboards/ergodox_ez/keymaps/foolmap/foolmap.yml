@@ -8,8 +8,8 @@ layouts:
     - mply a o e u i d h t n s vold
     - clear scln q j k x osm(lsft) osm(rsft) b m w v z clear
     - osm(lgui) home pgup pgdn end left down up right osm(rgui)
-    - osl(symb) sh_os sh_os osl(symb)
-    - sh_tt sh_tt
+    - osl(symb) lgui rgui osl(symb)
+    - sh_togg sh_togg
     - spc osm(lctl) osm(lalt) osm(ralt) osm(rctl) spc
   symb:
     - _ f1 f2 f3 f4 f5 _  _ f6 f7 f8 f9 f10 _
