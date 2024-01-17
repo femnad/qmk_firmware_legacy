@@ -24,9 +24,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *   |^LGUI | HOME | PGUP | PGDN | END  |                                       | LEFT | DOWN |  UP  |RIGHT |^RGUI |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
- *                                        |@SYMB |SH_OS |       |SH_OS |@SYMB |
+ *                                        |@SYMB | LGUI |       | RGUI |@SYMB |
  *                                 ,------|------|------|       |------+------+------.
- *                                 | SPC  |^LCTL |SH_TT |       |SH_TT |^RCTL | SPC  |
+ *                                 | SPC  |^LCTL |SH_TOGG|       |SH_TOGG|^RCTL | SPC  |
  *                                 |      |      |------|       |------|      |      |
  *                                 |      |      |^LALT |       |^RALT |      |      |
  *                                 `--------------------'       `--------------------'
@@ -37,8 +37,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_MPLY,       KC_A,          KC_O,          KC_E,          KC_U,          KC_I,    KC_D,          KC_H,          KC_T,     KC_N,          KC_S, KC_VOLD,
         CLEAR,         KC_SCLN,       KC_Q,          KC_J,          KC_K,          KC_X,    OSM(MOD_LSFT), OSM(MOD_RSFT), KC_B,     KC_M,          KC_W, KC_V,    KC_Z, CLEAR,
         OSM(MOD_LGUI), KC_HOME,       KC_PGUP,       KC_PGDN,       KC_END,        KC_LEFT, KC_DOWN,       KC_UP,         KC_RIGHT, OSM(MOD_RGUI),
-        OSL(SYMB),     SH_OS,         SH_OS,         OSL(SYMB),
-        SH_TT,         SH_TT,
+        OSL(SYMB),     KC_LGUI,       KC_RGUI,       OSL(SYMB),
+        SH_TOGG,       SH_TOGG,
         KC_SPC,        OSM(MOD_LCTL), OSM(MOD_LALT), OSM(MOD_RALT), OSM(MOD_RCTL), KC_SPC
 ),
 
