@@ -26,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        ,-------------.       ,-------------.
  *                                        |@SYMB | LGUI |       | RGUI |@SYMB |
  *                                 ,------|------|------|       |------+------+------.
- *                                 | SPC  |^LCTL |SH_TOGG|       |SH_TOGG|^RCTL | SPC  |
+ *                                 | SPC  |^LCTL |SH_OS |       |SH_OS |^RCTL | SPC  |
  *                                 |      |      |------|       |------|      |      |
  *                                 |      |      |^LALT |       |^RALT |      |      |
  *                                 `--------------------'       `--------------------'
@@ -38,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         CLEAR,         KC_SCLN,       KC_Q,          KC_J,          KC_K,          KC_X,    OSM(MOD_LSFT), OSM(MOD_RSFT), KC_B,     KC_M,          KC_W, KC_V,    KC_Z, CLEAR,
         OSM(MOD_LGUI), KC_HOME,       KC_PGUP,       KC_PGDN,       KC_END,        KC_LEFT, KC_DOWN,       KC_UP,         KC_RIGHT, OSM(MOD_RGUI),
         OSL(SYMB),     KC_LGUI,       KC_RGUI,       OSL(SYMB),
-        SH_TOGG,       SH_TOGG,
+        SH_OS,         SH_OS,
         KC_SPC,        OSM(MOD_LCTL), OSM(MOD_LALT), OSM(MOD_RALT), OSM(MOD_RCTL), KC_SPC
 ),
 
