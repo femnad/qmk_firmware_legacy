@@ -8,18 +8,18 @@ layouts:
     - mply      a         o         e         u         i         osm(lsft) osm(rsft) d         h         t         n         s         vold
     - clear     scln      q         j         k         x                             b         m         w         v         z         clear
     - osm(lgui) home      pgup      pgdn      end       osl(symb)                     osl(symb) left      down      up        right     osm(rgui)
-    -                     spc       osm(lctl) osm(lalt) osm(ralt)                     osm(rctl) spc
+    -                               spc       osm(lctl) osm(lalt)                     osm(ralt) osm(rctl) spc
   symb:
     - _         f1        f2        f3        f4        f5        _         _         f6        f7        f8        f9        f10       _
     - mprv      exlm      at        hash      dlr       perc      _         _         circ      ampr      astr      f11       f12       wbak
     - mnxt      lcbr      rcbr      lprn      rprn      eql       _         _         slsh      mins      unds      lbrc      rbrc      wfwd
     - _         _         _         tild      pipe      grv                           bsls      plus      del       ins       bsls      _
     - _         _         _         _         _         _                             _         _         _         _         _         _
-    -                     _         _         _         _                             _         _
+    -                               _         _         _                             _         _         _
   mdia:
     - _         _         _         _         _         _         _         _         _         _         _         _         _         _
     - _         wh_u      wh_l      ms_u      wh_r      _         _         _         _         acl2      acl1      acl0      _         _
     - _         wh_d      ms_l      ms_d      ms_r      _         _         _         _         btn1      btn2      btn2      _         _
     - _         rgb_mod   rgb_rmod  _         _         qk_boot                       qk_boot   _         _         _         rgb_tog   _
     - _         _         _         _         _         _                             _         _         _         _         _         _
-    -                     _         _         _         _                             _         _
+    -                               _         _         _                             _         _         _
