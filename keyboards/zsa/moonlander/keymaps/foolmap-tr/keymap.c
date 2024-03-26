@@ -7,7 +7,23 @@
 
 enum custom_keycodes {
   CLEAR = SAFE_RANGE,
+  UCIS
 };
+
+const ucis_symbol_t ucis_symbol_table[] = UCIS_TABLE(
+    UCIS_SYM("c,", 231),
+    UCIS_SYM("g(", 287),
+    UCIS_SYM("i.", 305),
+    UCIS_SYM("o:", 246),
+    UCIS_SYM("s,", 351),
+    UCIS_SYM("u:", 252),
+    UCIS_SYM("C,", 199),
+    UCIS_SYM("G(", 286),
+    UCIS_SYM("I,", 304),
+    UCIS_SYM("O:", 214),
+    UCIS_SYM("S,", 350),
+    UCIS_SYM("U:", 220)
+);
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -49,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * +------+------+------+------+------+------+             +------+------+------+------+------+------+
  * |      |      |      |      |      |      |             |      |      |      |      |      |      |
  * +------+------+------+------+------+------+             +------+------+------+------+------+------+
- *                      |      |      |      |             |      |      |      |
+ *                      | UCIS |      |      |             |      |      | UCIS |
  *                      +------+------+------+             +------+------+------+
  *
  */
@@ -60,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_MNXT, KC_LCBR, KC_RCBR, KC_LPRN, KC_RPRN, KC_EQL,  _______, _______, KC_SLSH, KC_MINS, KC_UNDS, KC_LBRC, KC_RBRC, KC_WFWD,
         _______, _______, _______, KC_TILD, KC_PIPE, KC_GRV,  KC_BSLS, KC_PLUS, KC_DEL,  KC_INS,  KC_BSLS, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______
+        UCIS,    _______, _______, _______, _______, UCIS
 ),
 
 /* Layer: MDIA
@@ -100,6 +116,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         reset_oneshot_layer();
         layer_clear();
         layer_on(BASE);
+        return false;
+      case UCIS:
+        ucis_start();
         return false;
     }
  }

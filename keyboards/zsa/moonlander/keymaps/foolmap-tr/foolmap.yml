@@ -1,5 +1,20 @@
 custom_keys:
   - clear
+  - ucis
+
+ucis_map:
+  c,: 0x00e7 # ç
+  g(: 0x011f # ğ
+  i.: 0x0131 # ı
+  'o:': 0x00f6 # ö
+  s,: 0x015F # ş
+  'u:': 0x00fc # ü
+  C,: 0x00c7 # Ç
+  G(: 0x011e # Ğ
+  I,: 0x0130 # İ
+  'O:': 0x00d6 # Ö
+  S,: 0x015E # Ş
+  'U:': 0x00dc # Ü
 
 layouts:
   base:
@@ -15,7 +30,7 @@ layouts:
     - mnxt      lcbr      rcbr      lprn      rprn      eql       _         _         slsh      mins      unds      lbrc      rbrc      wfwd
     - _         _         _         tild      pipe      grv                           bsls      plus      del       ins       bsls      _
     - _         _         _         _         _         _                             _         _         _         _         _         _
-    -                               _         _         _                             _         _         _
+    -                               ucis      _         _                             _         _         ucis
   mdia:
     - _         _         _         _         _         _         _         _         _         _         _         _         _         _
     - _         wh_u      wh_l      ms_u      wh_r      _         _         _         _         acl2      acl1      acl0      _         _
@@ -23,16 +38,3 @@ layouts:
     - _         rgb_mod   rgb_rmod  _         _         qk_boot                       qk_boot   _         _         _         rgb_tog   _
     - _         _         _         _         _         _                             _         _         _         _         _         _
     -                               _         _         _                             _         _         _
-ucis_map:
-  uc,: 0x00e7 # ç
-  ug(: 0x011f # ğ
-  ui.: 0x0131 # ı
-  'uo:': 0x00f6 # ö
-  us,: 0x015F # ş
-  'uu:': 0x00fc # ü
-  uC,: 0x00c7 # Ç
-  uG(: 0x011e # Ğ
-  uI,: 0x0130 # İ
-  'uO:': 0x00d6 # Ö
-  uS,: 0x015E # Ş
-  'uU:': 0x00dc # Ü
