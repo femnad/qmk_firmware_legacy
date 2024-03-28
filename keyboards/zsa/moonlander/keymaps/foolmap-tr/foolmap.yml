@@ -1,25 +1,19 @@
 custom_keys:
   - clear
 
-custom_definitions:
-  C_CDL_L: UC(0x00e7) # ç
-  G_BRV_L: UC(0x011f) # ğ
-  I_DLS_L: UC(0x0131) # ı
-  O_DIA_L: UC(0x00f6) # ö
-  S_CDL_L: UC(0x015F) # ş
-  U_DIA_L: UC(0x00fc) # ü
-  C_CDL_U: UC(0x00c7) # Ç
-  G_BRV_U: UC(0x011e) # Ğ
-  I_DAB_U: UC(0x0130) # İ
-  O_DIA_U: UC(0x00d6) # Ö
-  S_CDL_U: UC(0x015E) # Ş
-  U_DIA_U: UC(0x00dc) # Ü
+unicode_map:
+  c_cdl: ['0x00e7', '0x00c7']
+  g_brv: ['0x011f', '0x011e']
+  i_dot: ['0x0131', '0x0130']
+  o_dia: ['0x00f6', '0x00d6']
+  s_cdl: ['0x015F', '0x015E']
+  u_dia: ['0x00fc', '0x00dc']
 
 layouts:
   base:
     - osl(mdia) 1         2         3         4         5         esc       bspc      6         7         8         9         0         osl(mdia)
     - volu      quot      comm      dot       p         y         tab       ent       f         g         c         r         l         volu
-    - osl(trlc) a         o         e         u         i         osm(lsft) osm(rsft) d         h         t         n         s         osl(truc)
+    - osl(trum) a         o         e         u         i         osm(lsft) osm(rsft) d         h         t         n         s         osl(trum)
     - clear     scln      q         j         k         x                             b         m         w         v         z         clear
     - osm(lgui) home      pgup      pgdn      end       osl(symb)                     osl(symb) left      down      up        right     osm(rgui)
     -                               spc       osm(lctl) osm(lalt)                     osm(ralt) osm(rctl) spc
@@ -37,17 +31,10 @@ layouts:
     - _         rgb_mod   rgb_rmod  _         _         qk_boot                       qk_boot   _         _         _         rgb_tog   _
     - _         _         _         _         _         _                             _         _         _         _         _         _
     -                               _         _         _                             _         _         _
-  trlc:
+  trum:
     - _         _         _         _         _         _         _         _         _         _         _         _         _         _
-    - _         _         _         _         _         _         _         _         _         g_brv_l   c_cdl_l   _         _         _
-    - _         _         o_dia_l   _         u_dia_l   i_dls_l   _         _         _         _         _         _         s_cdl_l   _
-    - _         _         _         _         _         _                             _         _         _         _         _         _
-    - _         _         _         _         _         _                             _         _         _         _         _         _
-    -                               _         _         _                             _         _         _
-  truc:
-    - _         _         _         _         _         _         _         _         _         _         _         _         _         _
-    - _         _         _         _         _         _         _         _         _         g_brv_u   c_cdl_u   _         _         _
-    - _         _         o_dia_u   _         u_dia_u   i_dab_u   _         _         _         _         _         _         s_cdl_u   _
+    - _         _         _         _         _         _         _         _         _         g_brv     c_cdl     _         _         _
+    - _         _         o_dia     _         u_dia     i_dot     _         _         _         _         _         _         s_cdl     _
     - _         _         _         _         _         _                             _         _         _         _         _         _
     - _         _         _         _         _         _                             _         _         _         _         _         _
     -                               _         _         _                             _         _         _
