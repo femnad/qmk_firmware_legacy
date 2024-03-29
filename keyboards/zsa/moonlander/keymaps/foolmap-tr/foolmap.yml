@@ -12,7 +12,7 @@ unicode_map:
 layouts:
   base:
     - osl(mdia) 1         2         3         4         5         esc       bspc      6         7         8         9         0         osl(mdia)
-    - volu      quot      comm      dot       p         y         tab       ent       f         g         c         r         l         volu
+    - vold      quot      comm      dot       p         y         tab       ent       f         g         c         r         l         volu
     - osl(trum) a         o         e         u         i         osm(lsft) osm(rsft) d         h         t         n         s         osl(trum)
     - clear     scln      q         j         k         x                             b         m         w         v         z         clear
     - osm(lgui) home      pgup      pgdn      end       osl(symb)                     osl(symb) left      down      up        right     osm(rgui)
@@ -21,7 +21,7 @@ layouts:
     - _         f1        f2        f3        f4        f5        _         _         f6        f7        f8        f9        f10       _
     - mprv      exlm      at        hash      dlr       perc      _         _         circ      ampr      astr      f11       f12       wbak
     - mnxt      lcbr      rcbr      lprn      rprn      eql       _         _         slsh      mins      unds      lbrc      rbrc      wfwd
-    - _         _         _         tild      pipe      grv                           bsls      plus      del       ins       bsls      _
+    - _         mply      mute      tild      pipe      grv                           bsls      plus      del       ins       bsls      _
     - _         _         _         _         _         _                             _         _         _         _         _         _
     -                               _         _         _                             _         _         _
   mdia:
