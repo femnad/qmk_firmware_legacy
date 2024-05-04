@@ -1,0 +1,48 @@
+custom_keys:
+  - clear
+
+unicode_map:
+  c_cdl: ['0x00e7', '0x00c7']
+  g_brv: ['0x011f', '0x011e']
+  i_dot: ['0x0131', '0x0130']
+  o_dia: ['0x00f6', '0x00d6']
+  s_cdl: ['0x015f', '0x015e']
+  u_dia: ['0x00fc', '0x00dc']
+
+layouts:
+  base:
+    - osl(misc) 1         2         3         4         5         esc       bspc      6         7         8         9         0         osl(misc)
+    - mute      quot      comm      dot       p         y         tab       ent       f         g         c         r         l         volu
+    - mply      a         o         e         u         i                             d         h         t         n         s         vold
+    - clear     scln      q         j         k         x         osm(lsft) osm(rsft) b         m         w         v         z         clear
+    - osm(lgui) home      pgup      pgdn      end       left                                              down      up        right     osm(rgui)
+    -                                                   osl(symb) lgui      rgui      osl(symb)
+    -                                                             sh_os     sh_os
+    -                                         spc       osm(lctl) osm(lalt) osm(ralt) osm(rctl) spc
+  symb:
+    - _         f1        f2        f3        f4        f5        _         _         f6        f7        f8        f9        f10       _
+    - mprv      exlm      at        hash      dlr       perc      _         _         circ      ampr      astr      f11       f12       _
+    - mnxt      lcbr      rcbr      lprn      rprn      eql                           slsh      mins      unds      lbrc      rbrc      _
+    - _         _         _         tild      pipe      grv       _         _         bsls      plus      del       ins       bsls      _
+    - _         _         _         _         _         _                                                 _         _         _         _
+    -                                                   _         _         _         _
+    -                                                             _         _
+    -                                         _         _         _         _         _         _
+  misc:
+    - _         _         _         _         _         _         _         _         _         _         _         _         _         _
+    - _         _         _         ms_u      _         wh_u      _         _         _         acl2      acl1      acl0      _         _
+    - _         _         ms_l      ms_d      ms_r      wh_d                          _         btn1      btn2      btn3      _         _
+    - _         _         _         _         _         qk_boot   _         _         qk_boot   wh_l      wh_r      _         _         _
+    - _         _         _         _         _         _                                                 _         _         _         _
+    -                                                   _         _         _         _
+    -                                                             _         _
+    -                                         _         _         _         _         _         _
+  trum:
+    - _         _         _         _         _         _         _         _         _         _         _         _         _         _
+    - _         _         _         _      _         _      _         _         _         _      _      _      _         _
+    - _         _         o_dia      _      u_dia      _                          _         _      _      _      _         _
+    - _         _         _         _         _         _   _         _         _   _      _      _         _         _
+    - _         _         _         _         _         _                                                 _         _         _         _
+    -                                                   _         _         _         _
+    -                                                             _         _
+    -                                         _         _         _         _         _         _
