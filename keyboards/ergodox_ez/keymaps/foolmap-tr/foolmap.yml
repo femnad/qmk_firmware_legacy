@@ -18,7 +18,7 @@ layouts:
     - osm(lgui) home      pgup      pgdn      end       left                                              down      up        right     osm(rgui)
     -                                                   osl(symb) lgui      rgui      osl(symb)
     -                                                             sh_os     sh_os
-    -                                         spc       osm(lctl) osm(lalt) osm(ralt) osm(rctl) spc
+    -                                         spc       lctl      lalt      ralt      rctl      spc
   symb:
     - _         f1        f2        f3        f4        f5        _         _         f6        f7        f8        f9        f10       _
     - mprv      exlm      at        hash      dlr       perc      _         _         circ      ampr      astr      f11       f12       volu
