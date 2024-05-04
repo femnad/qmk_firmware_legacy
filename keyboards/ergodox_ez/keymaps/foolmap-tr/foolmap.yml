@@ -13,7 +13,7 @@ layouts:
   base:
     - osl(misc) 1         2         3         4         5         esc       bspc      6         7         8         9         0         osl(misc)
     - mute      quot      comm      dot       p         y         tab       ent       f         g         c         r         l         volu
-    - mply      a         o         e         u         i                             d         h         t         n         s         vold
+    - osl(trum) a         o         e         u         i                             d         h         t         n         s         osl(trum)
     - clear     scln      q         j         k         x         osm(lsft) osm(rsft) b         m         w         v         z         clear
     - osm(lgui) home      pgup      pgdn      end       left                                              down      up        right     osm(rgui)
     -                                                   osl(symb) lgui      rgui      osl(symb)
@@ -21,8 +21,8 @@ layouts:
     -                                         spc       osm(lctl) osm(lalt) osm(ralt) osm(rctl) spc
   symb:
     - _         f1        f2        f3        f4        f5        _         _         f6        f7        f8        f9        f10       _
-    - mprv      exlm      at        hash      dlr       perc      _         _         circ      ampr      astr      f11       f12       _
-    - mnxt      lcbr      rcbr      lprn      rprn      eql                           slsh      mins      unds      lbrc      rbrc      _
+    - mprv      exlm      at        hash      dlr       perc      _         _         circ      ampr      astr      f11       f12       volu
+    - mnxt      lcbr      rcbr      lprn      rprn      eql                           slsh      mins      unds      lbrc      rbrc      vold
     - _         _         _         tild      pipe      grv       _         _         bsls      plus      del       ins       bsls      _
     - _         _         _         _         _         _                                                 _         _         _         _
     -                                                   _         _         _         _
@@ -39,9 +39,9 @@ layouts:
     -                                         _         _         _         _         _         _
   trum:
     - _         _         _         _         _         _         _         _         _         _         _         _         _         _
-    - _         _         _         _      _         _      _         _         _         _      _      _      _         _
-    - _         _         o_dia      _      u_dia      _                          _         _      _      _      _         _
-    - _         _         _         _         _         _   _         _         _   _      _      _         _         _
+    - _         _         _         _         _         _         _         _         _         g_brv     c_cdl     _         _         _
+    - _         _         o_dia     _         u_dia     i_dot                         _         _         _         _         s_cdl     _
+    - _         _         _         _         _         _         _         _         _         _         _         _         _         _
     - _         _         _         _         _         _                                                 _         _         _         _
     -                                                   _         _         _         _
     -                                                             _         _
