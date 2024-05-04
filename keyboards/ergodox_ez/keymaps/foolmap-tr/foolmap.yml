@@ -15,7 +15,7 @@ layouts:
     - mute      quot      comm      dot       p         y         tab       ent       f         g         c         r         l         volu
     - osl(trum) a         o         e         u         i                             d         h         t         n         s         osl(trum)
     - clear     scln      q         j         k         x         osm(lsft) osm(rsft) b         m         w         v         z         clear
-    - osm(lgui) home      pgup      pgdn      end       left                                              down      up        right     osm(rgui)
+    - lgui      home      pgup      pgdn      end       left                                              down      up        right     rgui
     -                                                   osl(symb) lgui      rgui      osl(symb)
     -                                                             sh_os     sh_os
     -                                         spc       lctl      lalt      ralt      rctl      spc
