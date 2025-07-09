@@ -9,8 +9,8 @@ layouts:
   base:
     - 1           2           3           4           5           tild        grv         6           7           8           9           0
     - quot        comm        dot         p           y           esc         bspc        f           g           c           r           l
-    - a           o           e           u           i           tab         ent         d           h           t           n           s
-    - scln        q           j           mt(lgui, k) x           osm(lsft)   osm(rsft)   b           mt(rgui, m) w           v           z
+    - a           o           mt(lgui, e) u           i           tab         ent         d           h           mt(rgui, t) n           s
+    - scln        q           j           k           x           osm(lsft)   osm(rsft)   b           m           w           v           z
     - osm(lgui)   osl(mdia)   osm(lalt)   osm(lctl)   osl(symb)   spc         spc         osl(symb)   osm(rctl)   osm(ralt)   osl(mdia)   osm(lgui)
   symb:
     - f1          f2          f3          f4          f5          _           _           f6          f7          f8          f9          f10
