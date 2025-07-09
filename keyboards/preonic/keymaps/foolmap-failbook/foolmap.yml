@@ -1,0 +1,26 @@
+custom_keys:
+  - clear
+enums:
+  preonic_layers:
+    - base
+    - symb
+    - mdia
+layouts:
+  base:
+    - 1           2           3           4           5           tild        grv         6           7           8           9           0
+    - quot        comm        dot         p           y           esc         bspc        f           g           c           r           l
+    - a           o           e           u           i           tab         ent         d           h           t           n           s
+    - scln        q           j           mt(lgui, k) x           osm(lsft)   osm(rsft)   b           mt(rgui, m) w           v           z
+    - osm(lgui)   osl(mdia)   osm(lalt)   osm(lctl)   osl(symb)   spc         spc         osl(symb)   osm(rctl)   osm(ralt)   osl(mdia)   osm(lgui)
+  symb:
+    - f1          f2          f3          f4          f5          _           _           f6          f7          f8          f9          f10
+    - exlm        at          hash        dlr         perc        _           _           circ        ampr        astr        lprn        rprn
+    - lcbr        rcbr        lprn        rprn        eql         _           _           slsh        mins        unds        lbrc        rbrc
+    - clear       _           tild        pipe        grv         _           _           bsls        plus        del         ins         clear
+    - _           _           _           _           _           _           _           _           _           _           _           _
+  mdia:
+    - _           _           _           _           _           vold        volu        _           _           _           f11         f12
+    - _           _           pgup        _           _           mute        mply        _           _           up          _           _
+    - _           home        pgdn        end         ins         mprv        mnxt        del         left        down        rght        _
+    - _           _           _           _           qk_boot     _           _           qk_boot     _           _           _           _
+    - _           _           _           _           _           _           _           _           _           _           _           _
